@@ -1,0 +1,10 @@
+{%extends "blog/base.html"%}
+{% block content %}
+<div class="post">
+    <p>opublikowano: {{post.published_date}}</p>
+    {% if user.is_authenticated %}
+    <h1><a href="{%url 'post_detail' pk=post.pk%}">{{post.title}}</a></h1>
+    {% endif %}
+    <p>{{post.text}}</p>
+</div>
+{% endblock %}
